@@ -16,3 +16,6 @@ This script provides the following things in an automated way:
 <li>Cleanup of Installation leftovers and old configuration files</li>
 <li>At least the script asks you to restart the Raspberry Pi</li>
 </ul>
+
+Call the SH files via Terminal by calling sudo sh <path to the script> or make the file
+executable and call it with a doubleclick and start with the terminal 
