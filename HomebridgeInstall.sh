@@ -5,6 +5,7 @@
 # forum.smartapfel.de
 # on GitHub:
 # https://github.com/RomanSch/HomebridgeInstallScript
+# Version 1.0.0.0
 
 baseDir=$PWD/files
 cd $baseDir
