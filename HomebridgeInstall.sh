@@ -66,19 +66,19 @@ log "Installing latest NPM Release"
 sudo npm install -g npm@latest
 log "Installing homebridge via NPM"
 sudo npm install -g --unsafe-perm homebridge@latest
-log "Install Plugins? (Y/N)"
+log "Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com (Y/N)"
 read installPlugins
 if [ "$installPlugins" == "Y" -o "$installPlugins" == "y" ]
 	then 
 		until [ "$morePlugins" == "N" -o "$morePlugins" == "n" ]
 		do 
-			read -p "Enter the name of the plugin (e.g. harmonyhub)" plugin
-			echo $plugin
+			log "Enter the name of the plugin (e.g. harmonyhub)"
+			read plugin
 			pluginBaseName="homebridge-"
 			pluginName="$pluginBaseName$plugin"
 			log "Installing Plugin: $pluginName"
 			sudo npm install -g $pluginName@latest
-			log "Weitere Plugins? (Y/N)"
+			log "More Plugins? (Y/N)"
 			read morePlugins
 		done
 	else
@@ -106,7 +106,7 @@ then
 	sudo systemctl daemon-reload
 	sudo systemctl enable homebridge
 	log "Systemd Service enabled" 
-	log "Do you want to start the Service now? (Y/N)" 
+	log "Do you want to start the Service now? Don't forget to edit your config.json at /var/homebridge (Y/N)" 
 	read startServiceNow
 	if [ "$startServiceNow" == "y" -o "$startServiceNow" == "Y" ]
 	then
@@ -115,7 +115,7 @@ then
 		lxterminal --geometry=150x50 -e sudo journalctl -f -u homebridge		
 		log "Starting Homebridge Service" 
 		sudo systemctl start homebridge
-		log "Homebridge Serve started" 
+		log "Homebridge Serve started"
 	else 
 		log "Servicestart not triggered" 
 	fi
@@ -141,8 +141,9 @@ then
 else
 	log "VNC Server activation not triggered"
 fi
-log "Aufräumen von alten Paketen und Konfigurationsdateien"
+log "Cleanup of old unused stuff..."
 sudo dpkg -P `dpkg -l | grep "^rc" | awk -F" " '{ print $2 }'`
+log "Please don't forget to edit your config.json at /var/homebridge"
 log "Restart Raspberry now? (Y/N)" 
 read rebootNow
 if [ "$rebootNow" == "y" -o "$rebootNow" == "Y" ]
