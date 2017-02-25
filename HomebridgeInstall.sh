@@ -5,7 +5,7 @@
 # forum.smartapfel.de
 # on GitHub:
 # https://github.com/RomanSch/HomebridgeInstallScript
-# Version 1.0.0.0
+# Version 1.0.0.1
 
 baseDir=$PWD/files
 cd $baseDir
@@ -40,16 +40,27 @@ then
 else
 	log "Please update your Raspbian and other Software later."
 fi
+log "Checking your Raspberry Pi Hardwareversion..."
+hardwareVersion=sudo cat /proc/cpuinfo | grep Revision
+hardwareVersion=0123
+if [[ "$hardwareVersion" =~ [0-9]{4}$ ]]
+then 
+	log "You own an older Version of Raspberry Pi (< Raspberry Pi 2)."
+	architecture="6l"
+else
+	log "You own a new Raspberry Pi (>= Raspberry Pi 2)."
+	architecture="7l"
+fi
 log "Which NodeJS Version you want to install? Please use form like this: 6.9.5"
 read nodeVersion
 log "Installing NodeJS in Version $nodeVersion"
-wget https://nodejs.org/dist/v$nodeVersion/node-v$nodeVersion-linux-armv7l.tar.gz
-tar -xvf node-v$nodeVersion-linux-armv7l.tar.gz
-cd $baseDir/node-v$nodeVersion-linux-armv7l/
+wget https://nodejs.org/dist/v$nodeVersion/node-v$nodeVersion-linux-armv$architecture.tar.gz
+tar -xvf node-v$nodeVersion-linux-armv$architecture.tar.gz
+cd $baseDir/node-v$nodeVersion-linux-armv$architecture/
 sudo cp -R * /usr/local/
 cd $baseDir
-sudo rm node-v$nodeVersion-linux-armv7l -r
-sudo rm node-v$nodeVersion-linux-armv7l.tar.gz
+sudo rm node-v$nodeVersion-linux-armv$architecture -r
+sudo rm node-v$nodeVersion-linux-armv$architecture.tar.gz
 log "Installing libavahi libdnssd"
 sudo apt-get install libavahi-compat-libdnssd-dev
 log "Installing latest NPM Release"
@@ -117,6 +128,22 @@ then
 else
 	log "No Service configuration selected"
 fi
+log "Enable VNC Server to remote connect to Raspberry Desktop? (Y/N)"
+read enableVncServer
+if [ "$enableVncServer" == "y" -o "$enableVncServer" == "Y" ]
+then
+	if [ sudo systemctl status vncserver-x11-serviced.service | grep -q inactive ]
+	then
+		log "Enabling VNC Server in Raspi-Config"
+		sudo systemctl enable vncserver-x11-serviced.service
+	else
+		log "VNC Server already enabled"
+	fi
+else
+	log "VNC Server activation not triggered"
+fi
+log "Aufräumen von alten Paketen und Konfigurationsdateien"
+sudo dpkg -P `dpkg -l | grep "^rc" | awk -F" " '{ print $2 }'`
 log "Restart Raspberry now? (Y/N)" 
 read rebootNow
 if [ "$rebootNow" == "y" -o "$rebootNow" == "Y" ]
