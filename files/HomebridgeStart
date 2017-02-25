@@ -1,0 +1,9 @@
+[Desktop Entry]
+ Name=Start Homebridge
+ Comment=Kommentar zur Anwendung
+ Icon=/usr/share/pixmaps/lxterminal.xpm
+ Exec=lxterminal -e sudo systemctl start homebridge
+ Type=Application
+ Encoding=UTF-8
+ Terminal=false
+ Categories=None;
