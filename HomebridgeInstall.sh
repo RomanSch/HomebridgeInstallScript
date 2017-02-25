@@ -42,7 +42,6 @@ else
 fi
 log "Checking your Raspberry Pi Hardwareversion..."
 hardwareVersion=sudo cat /proc/cpuinfo | grep Revision
-hardwareVersion=0123
 if [[ "$hardwareVersion" =~ [0-9]{4}$ ]]
 then 
 	log "You own an older Version of Raspberry Pi (< Raspberry Pi 2)."
