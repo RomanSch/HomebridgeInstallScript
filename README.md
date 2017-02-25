@@ -1,5 +1,5 @@
 # HomebridgeInstallScript
-Automated Script to install <a href="https://github.com/nfarina/homebridge">Homebridge</a> and a few other things on a <a href="https://www.raspberrypi.org">Raspberry Pi</a>. This script was inspired by the <a href="forum.smartapfel.de">Smartapfel.de Community</a>.
+Automated Script to install <a href="https://github.com/nfarina/homebridge" target="_blank">Homebridge</a> and a few other things on a <a href="https://www.raspberrypi.org" targe="_blank">Raspberry Pi</a>. This script was inspired by the <a href="forum.smartapfel.de" target="_blank">Smartapfel.de Community</a>.
 
 This script provides the following things in an automated way:
 <ul>
