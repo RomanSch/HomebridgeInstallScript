@@ -106,19 +106,6 @@ then
 	sudo systemctl daemon-reload
 	sudo systemctl enable homebridge
 	log "Systemd Service enabled" 
-	log "Do you want to start the Service now? Don't forget to edit your config.json at /var/homebridge (Y/N)" 
-	read startServiceNow
-	if [ "$startServiceNow" == "y" -o "$startServiceNow" == "Y" ]
-	then
-		log "Starting Homebridge Service now" 
-		log "Starting Homebridge Journal" 
-		lxterminal --geometry=150x50 -e sudo journalctl -f -u homebridge		
-		log "Starting Homebridge Service" 
-		sudo systemctl start homebridge
-		log "Homebridge Serve started"
-	else 
-		log "Servicestart not triggered" 
-	fi
 	log "Copying Start Stop Skripts to Desktop" 
 	sudo cp HomebridgeRestart ~/Desktop/HomebridgeRestart
 	sudo cp HomebridgeStart ~/Desktop/HomebridgeStart
@@ -131,7 +118,7 @@ log "Enable VNC Server to remote connect to Raspberry Desktop? (Y/N)"
 read enableVncServer
 if [ "$enableVncServer" == "y" -o "$enableVncServer" == "Y" ]
 then
-	if [ sudo systemctl status vncserver-x11-serviced.service | grep -q inactive ]
+	if  sudo systemctl status vncserver-x11-serviced.service | grep -q inactive ;
 	then
 		log "Enabling VNC Server in Raspi-Config"
 		sudo systemctl enable vncserver-x11-serviced.service
@@ -152,6 +139,19 @@ then
 	sudo reboot
 else 
 	log "Please restart your Raspberry later" 
-	log "Your Homebridge Installation was successful" 
-	read -p "Press any key to exit the setup" exit
+	log "Your Homebridge Installation was successful" 	
 fi
+log "Do you want to start the Service now? Don't forget to edit your config.json at /var/homebridge (Y/N)" 
+read startServiceNow
+if [ "$startServiceNow" == "y" -o "$startServiceNow" == "Y" ]
+then
+	log "Starting Homebridge Service now" 
+	log "Starting Homebridge Journal" 
+	lxterminal --geometry=150x50 -e sudo journalctl -f -u homebridge		
+	log "Starting Homebridge Service" 
+	sudo systemctl start homebridge
+	log "Homebridge Serve started"
+else 
+	log "Servicestart not triggered"
+fi
+read -p "Press any key to exit the setup" exit
