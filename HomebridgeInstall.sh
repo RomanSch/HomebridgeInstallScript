@@ -16,7 +16,7 @@ sudo chmod 777 log
 ############# Functions ##############
 ######################################
 
-function log(){
+log(){
 	#Logging and output to console
 	message=$1
 	echo $message
