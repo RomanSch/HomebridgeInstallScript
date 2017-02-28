@@ -86,8 +86,10 @@ if [ "$installPlugins" == "Y" -o "$installPlugins" == "y" ]
 fi
 log "Copying default config.json" 
 log "You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor"
+sudo mkdir /var/homebridge
+sudo chmod 0777 /var/homebridge
 sudo cp config.json /var/homebridge/config.json	
-log "Config.json copied to /var/homebridge. Edit this Config.json do make your Plugin Configuration"	
+log "Default Config.json copied to /var/homebridge. Edit this Config.json do make your Plugin Configuration"	
 log "Do you want to configure the automatic Service to start Homebridge on every Boot? (Y/N)"
 read installService
 if [ "$installService" == "y" -o "$installService" == "Y" ]
