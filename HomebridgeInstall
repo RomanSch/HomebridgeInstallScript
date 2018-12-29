@@ -1,0 +1,287 @@
+#!/bin/bash
+
+# Author: Roman Schulz
+# inspired by forum.smartapfel.de
+# on GitHub: https://github.com/RomanSch/HomebridgeInstallScript
+# Version 1.1.0
+
+baseDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
+homeDir=${HOME}
+defaultNodeVersion="7.6.0"
+logPath="$baseDir/files/log/install.log"
+
+
+######################################
+############# Functions ##############
+######################################
+
+log(){
+	#Logging and output to console
+	message=$1
+	#echo $message
+	echo "$(date +%Y-%m-%d_%H-%M-%S) - $message" | sudo tee --append $logPath
+	#sudo echo "$(date +%Y-%m-%d_%H-%M-%S) - $message" >> $logPath
+}
+
+
+if [ -e $baseDir/files/log ]; 
+then 
+        echo "Log folder already exists"
+else 
+	echo "Create Log folder in $baseDir/files/log"
+        sudo mkdir $baseDir/files/log
+	sudo chmod 0777 $baseDir/files/log
+fi
+
+######################################
+######### Installationroutine ########     
+######################################
+
+##### Updating Homebridge Software
+log "Starting Homebridge Installation"
+log "Find the Installationlog at $logPath"
+log "Do you want to install Systemupdates first? It is recommended. (Y/N)"
+read updSystem
+if [ "$updSystem" == "y" -o "$updSystem" == "Y" ]
+then
+	log "Start Systemupdate"
+	sudo apt-get update -y
+	sudo apt-get dist-upgrade -y
+	sudo apt-get check
+	sudo apt-get clean
+	log "Do you want to update your Raspberry Firmware? !Restart required! (Y/N)"
+	read firmwareUpdate
+	if [ "$firmwareUpdate" == "Y" -o "$firmwareUpdate" == "y" ]
+	then 
+		log "Updating Raspberry Firmware - Restart is required after the update!"
+		sudo rpi-update -y
+	fi	
+else
+	log "Please update your Raspbian and other Software later."
+fi
+
+##### Raspberry Hardwareversion
+log "Checking your Raspberry Pi Hardwareversion..."
+architecture=$(uname -m)
+log "Your Raspberry is $architecture"
+
+#hardwareVersion=sudo cat /proc/cpuinfo | grep Revision
+#if [[ "$hardwareVersion" =~ [0-9]{4}$ ]]
+#then 
+#	log "You own an older Version of Raspberry Pi (< Raspberry Pi 2)."
+#	architecture="6l"
+#else
+#	log "You own a new Raspberry Pi (>= Raspberry Pi 2)."
+#	architecture="7l"
+#fi
+
+##### NodeJS Installation
+log "Which NodeJS Version you want to install? Please use form like this: 6.9.5"
+log "If you enter nothing the default Version (7.6.0) will be installed"
+read nodeVersion
+if [ "$nodeVersion" == "" ]
+then
+	log "No Nodeversion was entered. Installing default Version 7.6.0"
+	nodeVersion="7.6.0"
+fi
+log "Installing NodeJS in Version $nodeVersion"
+cd $baseDir/files
+wget https://nodejs.org/dist/v$nodeVersion/node-v$nodeVersion-linux-$architecture.tar.gz
+tar -xvf node-v$nodeVersion-linux-$architecture.tar.gz
+cd $baseDir/files/node-v$nodeVersion-linux-$architecture/
+sudo cp -R * /usr/local/
+cd $baseDir/files
+sudo rm node-v$nodeVersion-linux-$architecture -r
+sudo rm node-v$nodeVersion-linux-$architecture.tar.gz
+
+##### jq Installation for Json Viewing
+log "Installing jq for viewing Json Files"
+sudo apt-get install jq -y
+
+##### Libavahi libdnssd Installation
+log "Installing libavahi libdnssd"
+sudo apt-get install libavahi-compat-libdnssd-dev -y
+
+##### NPM Installation
+log "Installing latest NPM Release"
+sudo npm install -g npm@latest
+
+##### Homebridge Installation
+log "Installing homebridge via NPM"
+sudo npm install -g --unsafe-perm homebridge@latest
+
+##### Config.json Handling
+log "You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor"
+if [ -r /var/homebridge/config.json ]
+then
+	log "Config.json already exists at /var/homebridge. Do You want to use this config.json? (Maybe it is a backup?) (Y/N)"
+	read useOldConfig
+	if [ "$useOldConfig" == "N" -o "$useOldConfig" == "n" ]
+	then
+		log "Do you want to use another config.json? (Y/N)"
+		read useConfigBackup
+		if [ "$useConfigBackup" == "Y" -o "$useConfigBackup" == "y" ]
+		then
+			log "Please enter the absolute path to your config.json (Format: /<absolute path to your config.json>/config.json)"
+			read pathToConfig
+			sudo cp $pathToConfig /var/homebridge/config.json
+			sudo chmod 0777 /var/homebridge/config.json
+			log "Your provided config.json will be used"
+		else
+			log "The old config.json will be used"
+		fi
+	else
+		log "The old config.json will be used"
+	fi
+else
+	log "Creating /var/homebridge"
+	sudo mkdir /var/homebridge
+	sudo chmod 0777 /var/homebridge
+	log "Do you want to use your own config.json? (Y/N)"
+	read useConfigBackup
+	if [ "$useConfigBackup" == "Y" -o "$useConfigBackup" == "y" ]
+	then
+		log "Please enter the absolute path to your config.json (Format: /<absolute path to your config.json>/config.json)"
+		read pathToConfig
+		log "Your provided Config.json:"
+		sudo jq '.' $pathToConfig
+		log "Continue and use this one? (Y/N)"
+		read useProvidedConfig
+		if [ "$useProvidedConfig" == "y" -o "$useProvidedConfig" == "Y" ]
+		then 		
+			sudo cp $pathToConfig /var/homebridge
+			sudo chmod 0777 /var/homebridge/config.json
+			log "Your provided config.json will be used"
+		else
+			log "still TODO"
+		fi
+	else
+		sudo cp $baseDir/files/config.json /var/homebridge
+		sudo chmod 0777 /var/homebridge/config.json
+		log "The default config.json will be used"
+	fi	
+fi
+
+##### Plugin Installations
+log "Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)"
+read installPlugins
+if [ "$installPlugins" == "Y" -o "$installPlugins" == "y" ]
+	then 
+		until [ "$morePlugins" == "N" -o "$morePlugins" == "n" ]
+		do 
+			log "Enter the name of the plugin (e.g. harmonyhub)"
+			read plugin
+			pluginBaseName="homebridge-"
+			pluginName="$pluginBaseName$plugin"
+			log "Enter the desired Pluginversion. If nothing entered the latest Version will be installed."
+			read pluginVersion
+			if [ "$pluginVersion" != "" ]
+			then 
+				log "Installing Plugin $pluginName in Version $pluginVersion"
+			else
+				log "Installing Plugin $pluginName in latest Version"
+				pluginVersion="latest"
+			fi
+			sudo npm install -g $pluginName@$pluginVersion
+			log "Plugin $pluginName installation successful"
+			#log "Do you want to configure the Plugin $pluginName? (Y/N)"
+			#read configPlugin
+			#if [ "$configPlugin" == "Y" -o "$configPlugin" == "y" ]
+			#then
+			#	log "Your actual config looks like this"
+			#	sudo jq '.' /var/homebridge/config.json
+			#	log "Edit this one? (Y/N) (Save with Ctrl+O and close with Ctrl+Z)"
+			#	read editConfig
+			#	if [ "$editConfig" == "Y" -o "$editConfig" == "y" ]
+			#	then					
+			#		sudo nano /var/homebridge/config.json
+			#		log "Config edited and saved"
+			#	fi
+			#	
+			#fi
+			log "More Plugins? (Y/N)"
+			read morePlugins
+		done
+	else
+		log "Continue installation without plugins"
+fi
+
+##### Systemd Service Configuration	
+log "Do you want to configure the automatic Service to start Homebridge on every Boot? (Y/N)"
+read installService
+if [ "$installService" == "y" -o "$installService" == "Y" ]
+then 
+	log "Copying Service Files to Filesystem" 
+	sudo cp $baseDir/files/homebridge /etc/default/homebridge
+	sudo cp $baseDir/files/homebridge.service /etc/systemd/system/homebridge.service
+	log "Service files copied to filesystem" 
+	log "Create Service User homebridge" 
+	sudo useradd -M --system --group sudo homebridge
+	log "Service User Homebridge created" 
+	log "Modify Sudoers.d for user homebridge" 
+	sudo cp $baseDir/files/011_homebridge_nopasswd /etc/sudoers.d/011_homebridge_nopasswd
+	log "Sudoers.d modified" 
+	log "Enable systemd Service" 
+	sudo systemctl daemon-reload
+	sudo systemctl enable homebridge
+	log "Systemd Service enabled" 
+	log "Copying Start Stop Skripts to Desktop" 
+	sudo cp $baseDir/files/HomebridgeRestart $homeDir/Desktop/HomebridgeRestart
+	sudo cp $baseDir/files/HomebridgeStart $homeDir/Desktop/HomebridgeStart
+	sudo cp $baseDir/files/HomebridgeStop $homeDir/Desktop/HomebridgeStop
+	sudo cp $baseDir/files/Journal $homeDir/Desktop/HomebridgeLog
+else
+	log "No Service configuration selected"
+fi
+
+##### VNC Server Configuration
+log "Enable VNC Server to remote connect to Raspberry Desktop? (Y/N)"
+read enableVncServer
+if [ "$enableVncServer" == "y" -o "$enableVncServer" == "Y" ]
+then
+	if  sudo systemctl status vncserver-x11-serviced.service | grep -q inactive ;
+	then
+		log "Enabling VNC Server in Raspi-Config"
+		sudo systemctl enable vncserver-x11-serviced.service
+	else
+		log "VNC Server already enabled"
+	fi
+else
+	log "VNC Server activation not triggered"
+fi
+
+##### Cleanup of old stuff
+log "Cleanup of old unused stuff..."
+sudo dpkg -P `dpkg -l | grep "^rc" | awk -F" " '{ print $2 }'`
+sudo apt-get autoremove -y
+
+##### Reboot
+log "Restart Raspberry now? (Y/N)" 
+read rebootNow
+if [ "$rebootNow" == "y" -o "$rebootNow" == "Y" ]
+then
+	log "Homebridge will start after the reboot independent. If not type \"sudo systemctl start homebridge\" or use your Shortcut on your Desktop."
+	log "Your Raspberry will reboot in a few seconds"
+	sleep 30 
+	sudo reboot
+else 
+	log "Please restart your Raspberry later" 
+	log "Your Homebridge Installation was successful" 	
+fi
+
+##### Start Service
+log "Please don't forget to edit your config.json at /var/homebridge"
+log "Do you want to start the Service now? Don't forget to edit your config.json at /var/homebridge (Y/N)" 
+read startServiceNow
+if [ "$startServiceNow" == "y" -o "$startServiceNow" == "Y" ]
+then
+	log "Starting Homebridge Service now" 
+	log "Starting Homebridge Journal" 
+	lxterminal --geometry=150x50 -e sudo journalctl -f -u homebridge		
+	log "Starting Homebridge Service" 
+	sudo systemctl start homebridge
+	log "Homebridge Service started"
+else 
+	log "Servicestart not triggered"
+fi
+read -p "Press any key to exit the setup" exit
