@@ -7,7 +7,7 @@
 
 baseDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 homeDir=${HOME}
-defaultNodeVersion="7.6.0"
+defaultNodeVersion="9.11.2"
 logPath="$baseDir/files/log/install.log"
 
 
@@ -76,13 +76,13 @@ log "Your Raspberry is $architecture"
 #fi
 
 ##### NodeJS Installation
-log "Which NodeJS Version you want to install? Please use form like this: 6.9.5"
-log "If you enter nothing the default Version (7.6.0) will be installed"
+log "Which NodeJS Version you want to install? Please use form like this: 9.11.2"
+log "If you enter nothing the default Version (9.11.2) will be installed"
 read nodeVersion
 if [ "$nodeVersion" == "" ]
 then
-	log "No Nodeversion was entered. Installing default Version 7.6.0"
-	nodeVersion="7.6.0"
+	log "No Nodeversion was entered. Installing default Version 9.11.2"
+	nodeVersion=$defaultNodeVersion
 fi
 log "Installing NodeJS in Version $nodeVersion"
 cd $baseDir/files
