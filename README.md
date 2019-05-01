@@ -5,7 +5,7 @@ This script provides the following things in an automated way:
 <ul>
 <li>Installation of available Raspbian Updates (apt-get update/apt-get upgrade) Optional you can update the Raspberry Firmware (rpi-update)</li>
 <li>Checks the Raspberry Version and considers this for the NodeJS Installation.</li>
-<li>NodeJS in desired Version will be installed. If no Version is provided 7.6.0 will be installed.</li>
+<li>NodeJS in desired Version will be installed. If no Version is provided 9.11.2 will be installed.</li>
 <li>Libavahi DNS package Installation</li>
 <li>The latest Version of NPM</li>
 <li>The latest Version of Hombridge Application</li>
