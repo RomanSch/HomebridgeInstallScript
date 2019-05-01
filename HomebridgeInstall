@@ -136,7 +136,7 @@ then
 else
 	log "Creating /var/homebridge"
 	sudo mkdir /var/homebridge
-	sudo chmod 0777 /var/homebridge
+	sudo chmod 0777 /var/homebridge -R
 	log "Do you want to use your own config.json? (Y/N)"
 	read useConfigBackup
 	if [ "$useConfigBackup" == "Y" -o "$useConfigBackup" == "y" ]
