@@ -52,7 +52,7 @@ then
 	
 	sudo rm $pathToConfig -r
 	echo "Uninstall nodejs"
-	sudo apt-get purge nodejs
+	sudo apt-get purge nodejs -y
 
 	echo "Cleaning up old stuff"
 	sudo apt-get autoremove -y
