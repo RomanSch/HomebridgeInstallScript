@@ -109,7 +109,7 @@ then
 	if [ "$useOOTBConfig" == "N" -o "$useOOTBConfig" == "n" ]
 	then
 		validPath = false
-		while [ $validPath == false ]
+		while [ "$validPath" = false ]
 		do
 			log "Please provide the full path to the Config.json File you want to use for your Homebridge Installation...\n Format: /<path to your Config>/config.json"
 			read $pathToConfigBackup
@@ -237,7 +237,8 @@ then
 	sudo reboot
 else 
 	log "Please restart your Raspberry later" 
-	log "Your Homebridge Installation was successful" 	
+	log "Your Homebridge Installation was successful"
+	log "You can configure your Homebridge in the Webclient available here: http://:8581" 	
 fi
 
 ##### Start Service
