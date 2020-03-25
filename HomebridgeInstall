@@ -41,7 +41,7 @@ then
         echo "Log folder already exists"
 else 
 	echo "Create Log folder in $baseDir/files/log"
-        sudo mkdir $baseDir/files/log
+    sudo mkdir -p $baseDir/files/log
 	sudo chmod 0777 $baseDir/files/log
 fi
 
