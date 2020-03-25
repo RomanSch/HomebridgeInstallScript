@@ -1,1 +1,0 @@
-homebridge ALL=(ALL) NOPASSWD: /usr/bin/homebridge, /bin/systemctl, /bin/journalctl, /usr/lib/node_modules/npm/bin

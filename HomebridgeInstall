@@ -9,7 +9,7 @@ baseDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 homeDir=${HOME}
 #defaultNodeVersion="9.11.2" #deprecated due to recommended NodeJS Installation
 logPath="$baseDir/files/log/install.log"
-pathToConfi="/var/lib/homebridge/config.json"
+pathToConfig="/var/lib/homebridge"
 
 ######################################
 ############# Functions ##############
@@ -18,6 +18,19 @@ pathToConfi="/var/lib/homebridge/config.json"
 log(){
 	#Logging and output to console
 	message=$1
+#	level=$2
+#	$color = "\e[39m"
+#	case "$level" in
+#		"error" )
+#			$color="\e[31m";; #red
+#		"warn" )
+#			$color="\e[33m";; #yellow
+#		"info" )
+#			$color="\e[32m";; #green
+#		*)
+#			$color="\e[39m";; #default
+#	esac
+	#echo $message
 	echo -e "$(date +%Y-%m-%d_%H-%M-%S) - $message" | sudo tee --append $logPath
 	#sudo echo "$(date +%Y-%m-%d_%H-%M-%S) - $message" >> $logPath
 }
@@ -49,13 +62,194 @@ then
 	sudo apt-get dist-upgrade -y
 	sudo apt-get check
 	sudo apt-get clean
-	log "!NOT RECOMMENDED! Do you want to update your Raspberry Firmware? !Restart required! (Y/N)"
-	read firmwareUpdate
-	if [ "$firmwareUpdate" == "Y" -o "$firmwareUpdate" == "y" ]
-	then 
-		log "Updating Raspberry Firmware - Restart is required after the update!"
-		sudo rpi-update -y
-	fi	
 else
 	log "Please update your Raspbian and other Software later."
 fi
+
+##### Raspberry Hardwareversion
+log "Checking your Raspberry Pi Hardwareversion..."
+architecture=$(uname -m)
+log "Your Raspberry is $architecture"
+
+
+##### NodeJS Installation
+
+log "Installing NodeJS with recommended Options" "info"
+curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
+sudo apt-get install -y nodejs gcc g++ make python
+
+
+##### NPM Installation
+log "Installing latest NPM Release"
+sudo npm install -g npm
+
+##### Homebridge Installation
+log "Installing homebridge via NPM"
+sudo npm install -g --unsafe-perm homebridge homebridge-config-ui-x
+
+#### Setting up a Service for starting Homebridge after Reboot or Boot
+log "Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)"
+read setupHomebridgeService
+if [ "$setupHomebridgeService" == "Y" -o "$setupHomebridgeService" == "y" ]
+then
+	log "Setting up Homebridge Service..."
+	sudo hb-service install --user homebridge
+	log "Homebridge Service successfully created.\nYou can find the Config in /var/lib/homebridge"
+fi
+
+##### Config.json Handling
+log "You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor"
+if [ -r $pathToConfig/config.json ]
+then
+	log "Config.json found in $pathToConfig. Do you want to use this Out of the Box Config File? (Y/N)"
+	read useOOTBConfig
+	if [ "$useOOTBConfig" == "N" -o "$useOOTBConfig" == "n" ]
+	then
+		validPath = false
+		while [ $validPath != true ]
+		do
+			log "Please provide the full path to the Config.json File you want to use for your Homebridge Installation...\n Format: /<path to your Config>/config.json"
+			read $pathToConfigBackup
+			if [ -r $pathToConfigBackup ]
+			then
+				log "Provided Path is valid..."
+				log "Copying your config.json to the correct path..."
+				sudo cp $pathToConfigBackup $pathToConfig/config.json
+				sudo chmod 0777 $pathToConfig/config.json	
+				$validPath = true
+			else
+				log "The provided Path is not valid... Please try again and make sure you use the absolute path to the config.json File.\nFormat has to be like: /<path to your file>/config.json"
+
+			fi
+		done
+	else
+		log "The Out of the Box Config will be used.\nYou can modify this later manually or in the Webclient..."
+	fi
+else
+	log "Something went wrong during the Homebridge Installation... Please check the Installation Log and/or restart the Installation"
+	exit 1	
+fi
+
+##### Plugin Installations
+log "Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)"
+read installPlugins
+if [ "$installPlugins" == "Y" -o "$installPlugins" == "y" ]
+	then 
+		until [ "$morePlugins" == "N" -o "$morePlugins" == "n" ]
+		do 
+			log "Enter the name of the plugin (e.g. harmonyhub)"
+			read plugin
+			pluginBaseName="homebridge-"
+			pluginName="$pluginBaseName$plugin"
+			log "Enter the desired Pluginversion. If nothing entered the latest Version will be installed."
+			read pluginVersion
+			if [ "$pluginVersion" != "" ]
+			then 
+				log "Installing Plugin $pluginName in Version $pluginVersion"
+			else
+				log "Installing Plugin $pluginName in latest Version"
+				pluginVersion="latest"
+			fi
+			sudo npm install -g $pluginName@$pluginVersion
+			log "Plugin $pluginName installation successful"
+			#log "Do you want to configure the Plugin $pluginName? (Y/N)"
+			#read configPlugin
+			#if [ "$configPlugin" == "Y" -o "$configPlugin" == "y" ]
+			#then
+			#	log "Your actual config looks like this"
+			#	sudo jq '.' /var/homebridge/config.json
+			#	log "Edit this one? (Y/N) (Save with Ctrl+O and close with Ctrl+Z)"
+			#	read editConfig
+			#	if [ "$editConfig" == "Y" -o "$editConfig" == "y" ]
+			#	then					
+			#		sudo nano /var/homebridge/config.json
+			#		log "Config edited and saved"
+			#	fi
+			#	
+			#fi
+			log "More Plugins? (Y/N)"
+			read morePlugins
+		done
+	else
+		log "Continue installation without plugins"
+fi
+
+##### Systemd Service Configuration	
+#log "Do you want to configure the automatic Service to start Homebridge on every Boot? (Y/N)"
+#read installService
+#if [ "$installService" == "y" -o "$installService" == "Y" ]
+#then 
+#	log "Copying Service Files to Filesystem" 
+#	sudo cp $baseDir/files/homebridge /etc/default/homebridge
+#	sudo cp $baseDir/files/homebridge.service /etc/systemd/system/homebridge.service
+#	log "Service files copied to filesystem" 
+#	log "Create Service User homebridge" 
+#	sudo useradd -M --system --group sudo homebridge
+#	log "Service User Homebridge created" 
+#	log "Modify Sudoers.d for user homebridge" 
+#	sudo cp $baseDir/files/011_homebridge_nopasswd /etc/sudoers.d/011_homebridge_nopasswd
+#	log "Sudoers.d modified" 
+#	log "Enable systemd Service" 
+#	sudo systemctl daemon-reload
+#	sudo systemctl enable homebridge
+#	log "Systemd Service enabled" 
+#	log "Copying Start Stop Skripts to Desktop" 
+#	sudo cp $baseDir/files/HomebridgeRestart $homeDir/Desktop/HomebridgeRestart
+#	sudo cp $baseDir/files/HomebridgeStart $homeDir/Desktop/HomebridgeStart
+#	sudo cp $baseDir/files/HomebridgeStop $homeDir/Desktop/HomebridgeStop
+#	sudo cp $baseDir/files/Journal $homeDir/Desktop/HomebridgeLog
+#else
+#	log "No Service configuration selected"
+#fi
+
+##### VNC Server Configuration
+log "Enable VNC Server to remote connect to Raspberry Desktop? (Y/N)"
+read enableVncServer
+if [ "$enableVncServer" == "y" -o "$enableVncServer" == "Y" ]
+then
+	if  sudo systemctl status vncserver-x11-serviced.service | grep -q inactive ;
+	then
+		log "Enabling VNC Server in Raspi-Config"
+		sudo systemctl enable vncserver-x11-serviced.service
+	else
+		log "VNC Server already enabled"
+	fi
+else
+	log "VNC Server activation not triggered"
+fi
+
+##### Cleanup of old stuff
+#log "Cleanup of old unused stuff..."
+#sudo dpkg -P `dpkg -l | grep "^rc" | awk -F" " '{ print $2 }'`
+#sudo apt-get autoremove -y
+
+##### Reboot
+log "Restart Raspberry now? (Y/N)" 
+read rebootNow
+if [ "$rebootNow" == "y" -o "$rebootNow" == "Y" ]
+then
+	log "Homebridge will start after the reboot independent. If not type \"sudo systemctl start homebridge\" or use your Shortcut on your Desktop."
+	log "Your Raspberry will reboot in a few seconds"
+	sleep 30 
+	sudo reboot
+else 
+	log "Please restart your Raspberry later" 
+	log "Your Homebridge Installation was successful" 	
+fi
+
+##### Start Service
+#log "Please don't forget to edit your config.json at /var/homebridge"
+#log "Do you want to start the Service now? Don't forget to edit your config.json at /var/homebridge (Y/N)" 
+#read startServiceNow
+#if [ "$startServiceNow" == "y" -o "$startServiceNow" == "Y" ]
+#then
+#	log "Starting Homebridge Service now" 
+#	log "Starting Homebridge Journal" 
+#	lxterminal --geometry=150x50 -e sudo journalctl -f -u homebridge		
+#	log "Starting Homebridge Service" 
+#	sudo systemctl start homebridge
+#	log "Homebridge Service started"
+#else 
+#	log "Servicestart not triggered"
+#fi
+read -p "Press any key to exit the setup" exit

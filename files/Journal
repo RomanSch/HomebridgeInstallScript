@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Homebridge Log
-Comment=Kommentar zur Anwendung
-Icon=/usr/share/pixmaps/lxterminal.xpm
-Exec=lxterminal --geometry=150x50 -e sudo journalctl -f -u homebridge
-Type=Application
-Encoding=UTF-8
-Terminal=false
-Categories=None;
