@@ -2,28 +2,26 @@
 
 homeDir=${HOME}
 defaultBackupPath=${HOME}/homebridgeBackup
+pathToConfig="/var/lib/homebridge"
 
 echo "Uninstalling Homebridge and every dependencies? (Y/N)"
 read uninstall
 if [ "$uninstall" == "Y" -o "$uninstall" == "y" ] 
 then 
 	echo "Stopping Homebridge Service"
-	sudo systemctl stop homebridge
+	sudo hb-service stop && sudo hb-service uninstall
 	echo "Uninstall Homebridge Plugins"
 	sudo npm uninstall -g homebridge-*
 	echo "Uninstall homebridge"
-	sudo npm uninstall -g homebridge
+	sudo npm uninstall -g homebridge homebridge-config-ui-x
 	echo "Uninstall npm"
 	sudo npm uninstall -g npm
-	echo "Removing Service Files etc."
-	sudo rm /etc/systemd/system/homebridge.service
-	sudo rm /etc/default/homebridge
 	echo "Do you want to save your current config.json as a Backup? (Y/N)"
 	read backupConfig
 	if [ "$backupConfig" == "Y" -o "$backupConfig" == "y" ]
 	then 
 		echo "This config.json will be backed up if you confirm"
-		sudo jq '.' /var/homebridge/config.json
+		sudo jq '.' $pathToConfig/config.json
 		read -p "Save this config.json? (Y/N)"		
 		echo "Where do you want to store your backup? Please provide a absolute Path (/home/pi/Documents/backup e.g.)"
 		echo "If you provide no Path the default path ($defaultBackupPath) will be used"
@@ -33,35 +31,26 @@ then
 			echo "Copying your config.json to $backupPath"
 			if [ -e $backupPath ];
 			then
-				sudo cp /var/homebridge/config.json $backupPath/$(date +%Y-%m-%d_%H-%M-%S)_config.json.bak
+				sudo cp $pathToConfig/config.json $backupPath/$(date +%Y-%m-%d_%H-%M-%S)_config.json.bak
 			else
 				sudo mkdir -p $backupPath
 				sudo chmod 0777 $backupPath
-				sudo cp /var/homebridge/config.json $backupPath/$(date +%Y-%m-%d_%H-%M-%S)_config.json.bak
+				sudo cp $pathToConfig/config.json $backupPath/$(date +%Y-%m-%d_%H-%M-%S)_config.json.bak
 			fi
 		else
 			echo "Copying your config.json to $defaultBackupPath"
 			if [ -e $defaultBackupPath ];
 			then
-				sudo cp /var/homebridge/config.json $defaultBackupPath/$(date +%Y-%m-%d_%H-%M-%S)_config.json.bak
+				sudo cp $pathToConfig/config.json $defaultBackupPath/$(date +%Y-%m-%d_%H-%M-%S)_config.json.bak
 			else 
 				sudo mkdir -p $defaultBackupPath
 				sudo chmod 0777 $defaultBackupPath
-				sudo cp /var/homebridge/config.json $defaultBackupPath/$(date +%Y-%m-%d_%H-%M-%S)_config.json.bak
+				sudo cp $pathToConfig/config.json $defaultBackupPath/$(date +%Y-%m-%d_%H-%M-%S)_config.json.bak
 			fi
 		fi
 	fi
-	sudo rm /var/homebridge -r
-	echo "Deleting homebridge User"
-	sudo rm /etc/sudoers.d/011_homebridge_nopasswd
-	sudo deluser homebridge
-	echo "Removing Service Shortcuts from Desktop"
-	sudo rm $homeDir/Desktop/HomebridgeRestart
-	sudo rm $homeDir/Desktop/HomebridgeStart
-	sudo rm $homeDir/Desktop/HomebridgeStop
-	sudo rm $homeDir/Desktop/HomebridgeLog
-	echo "Uninstall libavahi libdnssd"
-	sudo apt-get purge libavahi-compat-libdnssd-dev -y
+	
+	sudo rm $pathToConfig -r
 	echo "Uninstall nodejs"
 	sudo apt-get purge nodejs
 
