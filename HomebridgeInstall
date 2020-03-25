@@ -87,6 +87,9 @@ sudo npm install -g npm
 log "Installing homebridge via NPM"
 sudo npm install -g --unsafe-perm homebridge homebridge-config-ui-x
 
+##### JQ Json Viewing in Bash Installation
+sudo apt-get install -y jq 
+
 #### Setting up a Service for starting Homebridge after Reboot or Boot
 log "Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)"
 read setupHomebridgeService
@@ -106,7 +109,7 @@ then
 	if [ "$useOOTBConfig" == "N" -o "$useOOTBConfig" == "n" ]
 	then
 		validPath = false
-		while [ $validPath != true ]
+		while [ $validPath == false ]
 		do
 			log "Please provide the full path to the Config.json File you want to use for your Homebridge Installation...\n Format: /<path to your Config>/config.json"
 			read $pathToConfigBackup

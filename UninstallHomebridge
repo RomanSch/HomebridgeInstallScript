@@ -9,7 +9,7 @@ read uninstall
 if [ "$uninstall" == "Y" -o "$uninstall" == "y" ] 
 then 
 	echo "Stopping Homebridge Service"
-	sudo hb-service stop && sudo hb-service uninstall
+	sudo hb-service uninstall
 	echo "Uninstall Homebridge Plugins"
 	sudo npm uninstall -g homebridge-*
 	echo "Uninstall homebridge"
