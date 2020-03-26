@@ -117,7 +117,7 @@ then
 			then
 				log "Provided Path is valid..."
 				log "Copying your config.json to the correct path..."
-				sudo cp $pathToConfigBackup $pathToConfig/config.json
+				sudo cp $pathToConfigBackup $pathToConfig/
 				sudo chmod 0777 $pathToConfig/config.json	
 				$validPath = true
 			else
