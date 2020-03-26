@@ -75,20 +75,20 @@ log "Your Raspberry is $architecture"
 ##### NodeJS Installation
 
 log "Installing NodeJS with recommended Options" "info"
-curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
-sudo apt-get install -y nodejs gcc g++ make python
+#curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
+#sudo apt-get install -y nodejs gcc g++ make python
 
 
 ##### NPM Installation
 log "Installing latest NPM Release"
-sudo npm install -g npm
+#sudo npm install -g npm
 
 ##### Homebridge Installation
 log "Installing homebridge via NPM"
-sudo npm install -g --unsafe-perm homebridge homebridge-config-ui-x
+#sudo npm install -g --unsafe-perm homebridge homebridge-config-ui-x
 
 ##### JQ Json Viewing in Bash Installation
-sudo apt-get install -y jq 
+#sudo apt-get install -y jq 
 
 #### Setting up a Service for starting Homebridge after Reboot or Boot
 log "Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)"
@@ -96,7 +96,7 @@ read setupHomebridgeService
 if [ "$setupHomebridgeService" == "Y" -o "$setupHomebridgeService" == "y" ]
 then
 	log "Setting up Homebridge Service..."
-	sudo hb-service install --user homebridge
+	#sudo hb-service install --user homebridge
 	log "Homebridge Service successfully created.\nYou can find the Config in /var/lib/homebridge"
 fi
 
