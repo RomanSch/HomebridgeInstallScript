@@ -108,7 +108,7 @@ then
 	read useOOTBConfig
 	if [ "$useOOTBConfig" == "N" -o "$useOOTBConfig" == "n" ]
 	then
-		validPath = false
+		validPath=false
 		while [ "$validPath" = false ]
 		do
 			log "Please provide the full path to the Config.json File you want to use for your Homebridge Installation...\n Format: /<path to your Config>/config.json"
@@ -238,7 +238,7 @@ then
 else 
 	log "Please restart your Raspberry later" 
 	log "Your Homebridge Installation was successful"
-	log "You can configure your Homebridge in the Webclient available here: http://:8581" 	
+	log "You can configure your Homebridge in the Webclient available here: http://<IP or Name of your Raspberry>:8581" 	
 fi
 
 ##### Start Service
