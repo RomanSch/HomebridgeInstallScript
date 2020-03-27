@@ -1,4 +1,0 @@
-pathToConfig="/var/lib/homebridge"
-read pathToConfigBackup
-
-sudo cp -a $pathToConfigBackup $pathToConfig/config.json
