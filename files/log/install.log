@@ -1,0 +1,671 @@
+2020-03-25_23-29-17 - Starting Homebridge Installation
+2020-03-25_23-29-17 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-25_23-29-17 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-25_23-29-17 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-25_23-29-24 - Please update your Raspbian and other Software later.
+2020-03-25_23-29-24 - Checking your Raspberry Pi Hardwareversion...
+2020-03-25_23-29-25 - Your Raspberry is armv7l
+2020-03-25_23-29-25 - Installing NodeJS with recommended Options
+2020-03-25_23-29-43 - Installing latest NPM Release
+2020-03-25_23-30-43 - Installing homebridge via NPM
+2020-03-25_23-32-59 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-25_23-36-13 - Setting up Homebridge Service...
+2020-03-25_23-36-22 - Homebridge Service successfully created.
+You can find the Config in /var/lib/homebridge
+2020-03-25_23-36-22 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-25_23-36-22 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-25_23-36-45 - The Out of the Box Config will be used.
+You can modify this later manually or in the Webclient...
+2020-03-25_23-36-45 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
+2020-03-25_23-36-59 - Enter the name of the plugin (e.g. harmonyhub)
+2020-03-25_23-37-04 - Enter the desired Pluginversion. If nothing entered the latest Version will be installed.
+2020-03-25_23-37-06 - Installing Plugin homebridge-harmonyhub in latest Version
+2020-03-25_23-38-17 - Plugin homebridge-harmonyhub installation successful
+2020-03-25_23-38-17 - More Plugins? (Y/N)
+2020-03-25_23-40-09 - Enable VNC Server to remote connect to Raspberry Desktop? (Y/N)
+2020-03-25_23-40-13 - VNC Server activation not triggered
+2020-03-25_23-40-13 - Restart Raspberry now? (Y/N)
+2020-03-25_23-40-15 - Please restart your Raspberry later
+2020-03-25_23-40-15 - Your Homebridge Installation was successful
+2020-03-25_23-46-53 - Starting Homebridge Installation
+2020-03-25_23-46-53 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-25_23-46-53 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-25_23-46-53 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-25_23-47-14 - Please update your Raspbian and other Software later.
+2020-03-25_23-47-14 - Checking your Raspberry Pi Hardwareversion...
+2020-03-25_23-47-14 - Your Raspberry is armv7l
+2020-03-25_23-47-14 - Installing NodeJS with recommended Options
+2020-03-25_23-48-48 - Installing latest NPM Release
+2020-03-25_23-50-22 - Installing homebridge via NPM
+2020-03-25_23-53-32 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-25_23-54-02 - Setting up Homebridge Service...
+2020-03-25_23-54-08 - Homebridge Service successfully created.
+You can find the Config in /var/lib/homebridge
+2020-03-25_23-54-08 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-25_23-54-08 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-25_23-54-22 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
+2020-03-25_23-54-45 - Continue installation without plugins
+2020-03-25_23-54-45 - Enable VNC Server to remote connect to Raspberry Desktop? (Y/N)
+2020-03-25_23-54-48 - VNC Server activation not triggered
+2020-03-25_23-54-48 - Restart Raspberry now? (Y/N)
+2020-03-25_23-54-50 - Please restart your Raspberry later
+2020-03-25_23-54-50 - Your Homebridge Installation was successful
+2020-03-26_00-00-26 - Starting Homebridge Installation
+2020-03-26_00-00-26 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_00-00-26 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_00-00-26 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_00-00-28 - Please update your Raspbian and other Software later.
+2020-03-26_00-00-28 - Checking your Raspberry Pi Hardwareversion...
+2020-03-26_00-00-28 - Your Raspberry is armv7l
+2020-03-26_00-00-28 - Installing NodeJS with recommended Options
+2020-03-26_00-02-09 - Installing latest NPM Release
+2020-03-26_00-02-54 - Installing homebridge via NPM
+2020-03-26_00-05-48 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-26_00-06-34 - Setting up Homebridge Service...
+2020-03-26_00-06-38 - Homebridge Service successfully created.
+You can find the Config in /var/lib/homebridge
+2020-03-26_00-06-38 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-26_00-06-38 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-26_00-10-10 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
+2020-03-26_00-10-22 - Continue installation without plugins
+2020-03-26_00-10-22 - Enable VNC Server to remote connect to Raspberry Desktop? (Y/N)
+2020-03-26_00-10-24 - VNC Server activation not triggered
+2020-03-26_00-10-24 - Restart Raspberry now? (Y/N)
+2020-03-26_00-10-25 - Please restart your Raspberry later
+2020-03-26_00-10-25 - Your Homebridge Installation was successful
+2020-03-26_00-18-38 - Starting Homebridge Installation
+2020-03-26_00-18-38 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_00-18-38 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_00-18-38 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_00-18-39 - Please update your Raspbian and other Software later.
+2020-03-26_00-18-40 - Checking your Raspberry Pi Hardwareversion...
+2020-03-26_00-18-40 - Your Raspberry is armv7l
+2020-03-26_00-18-40 - Installing NodeJS with recommended Options
+2020-03-26_00-19-02 - Installing latest NPM Release
+2020-03-26_00-19-45 - Installing homebridge via NPM
+2020-03-26_00-22-57 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-26_00-23-04 - Setting up Homebridge Service...
+2020-03-26_00-23-06 - Homebridge Service successfully created.
+You can find the Config in /var/lib/homebridge
+2020-03-26_00-23-06 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-26_00-23-06 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-26_00-23-20 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
+2020-03-26_00-27-09 - Continue installation without plugins
+2020-03-26_00-27-09 - Enable VNC Server to remote connect to Raspberry Desktop? (Y/N)
+2020-03-26_00-27-12 - VNC Server activation not triggered
+2020-03-26_00-27-12 - Restart Raspberry now? (Y/N)
+2020-03-26_00-27-14 - Please restart your Raspberry later
+2020-03-26_00-27-14 - Your Homebridge Installation was successful
+2020-03-26_00-27-14 - You can configure your Homebridge in the Webclient available here: http://:8581
+2020-03-26_09-54-34 - Starting Homebridge Installation
+2020-03-26_09-54-34 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_09-54-34 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_09-54-34 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_09-54-38 - Please update your Raspbian and other Software later.
+2020-03-26_09-54-38 - Checking your Raspberry Pi Hardwareversion...
+2020-03-26_09-54-38 - Your Raspberry is armv7l
+2020-03-26_09-54-38 - Installing NodeJS with recommended Options
+2020-03-26_09-56-09 - Installing latest NPM Release
+2020-03-26_09-57-51 - Installing homebridge via NPM
+2020-03-26_10-00-02 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-26_10-00-31 - Setting up Homebridge Service...
+2020-03-26_10-00-39 - Homebridge Service successfully created.
+You can find the Config in /var/lib/homebridge
+2020-03-26_10-00-39 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-26_10-00-39 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-26_10-00-47 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
+2020-03-26_10-01-22 - Continue installation without plugins
+2020-03-26_10-01-22 - Enable VNC Server to remote connect to Raspberry Desktop? (Y/N)
+2020-03-26_10-01-26 - VNC Server already enabled
+2020-03-26_10-01-27 - Restart Raspberry now? (Y/N)
+2020-03-26_10-01-30 - Please restart your Raspberry later
+2020-03-26_10-01-30 - Your Homebridge Installation was successful
+2020-03-26_10-01-30 - You can configure your Homebridge in the Webclient available here: http://:8581
+2020-03-26_11-21-40 - Starting Homebridge Installation
+2020-03-26_11-21-40 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_11-21-40 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_11-21-40 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_11-21-44 - Please update your Raspbian and other Software later.
+2020-03-26_11-21-44 - Checking your Raspberry Pi Hardwareversion...
+2020-03-26_11-21-44 - Your Raspberry is armv7l
+2020-03-26_11-21-44 - Installing NodeJS with recommended Options
+2020-03-26_11-24-50 - Installing latest NPM Release
+2020-03-26_11-26-17 - Installing homebridge via NPM
+2020-03-26_11-29-33 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-26_11-30-22 - Setting up Homebridge Service...
+2020-03-26_11-30-26 - Homebridge Service successfully created.
+You can find the Config in /var/lib/homebridge
+2020-03-26_11-30-26 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-26_11-30-26 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-26_11-30-27 - The Out of the Box Config will be used.
+You can modify this later manually or in the Webclient...
+2020-03-26_11-30-27 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
+2020-03-26_11-31-36 - Starting Homebridge Installation
+2020-03-26_11-31-36 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_11-31-36 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_11-31-36 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_11-31-38 - Please update your Raspbian and other Software later.
+2020-03-26_11-31-38 - Checking your Raspberry Pi Hardwareversion...
+2020-03-26_11-31-39 - Your Raspberry is armv7l
+2020-03-26_11-31-39 - Installing NodeJS with recommended Options
+2020-03-26_11-32-11 - Installing latest NPM Release
+2020-03-26_11-32-58 - Installing homebridge via NPM
+2020-03-26_11-35-28 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-26_11-39-54 - Setting up Homebridge Service...
+2020-03-26_11-39-56 - Homebridge Service successfully created.
+You can find the Config in /var/lib/homebridge
+2020-03-26_11-39-56 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-26_11-39-56 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-26_11-40-01 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_11-42-07 - Provided Path is valid...
+2020-03-26_11-42-07 - Copying your config.json to the correct path...
+2020-03-26_11-42-07 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_11-48-43 - Provided Path is valid...
+2020-03-26_11-48-43 - Copying your config.json to the correct path...
+2020-03-26_11-48-44 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_11-50-18 - Starting Homebridge Installation
+2020-03-26_11-50-18 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_11-50-18 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_11-50-18 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_11-50-20 - Please update your Raspbian and other Software later.
+2020-03-26_11-50-20 - Checking your Raspberry Pi Hardwareversion...
+2020-03-26_11-50-20 - Your Raspberry is armv7l
+2020-03-26_11-50-20 - Installing NodeJS with recommended Options
+2020-03-26_11-51-09 - Starting Homebridge Installation
+2020-03-26_11-51-09 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_11-51-09 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_11-51-09 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_11-51-15 - Starting Homebridge Installation
+2020-03-26_11-51-15 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_11-51-16 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_11-51-16 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_11-51-17 - Please update your Raspbian and other Software later.
+2020-03-26_11-51-17 - Checking your Raspberry Pi Hardwareversion...
+2020-03-26_11-51-18 - Your Raspberry is armv7l
+2020-03-26_11-51-18 - Installing NodeJS with recommended Options
+2020-03-26_11-51-18 - Installing latest NPM Release
+2020-03-26_11-51-18 - Installing homebridge via NPM
+2020-03-26_11-51-18 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-26_11-51-22 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-26_11-51-22 - Something went wrong during the Homebridge Installation... Please check the Installation Log and/or restart the Installation
+2020-03-26_11-52-12 - Starting Homebridge Installation
+2020-03-26_11-52-12 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_11-52-12 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_11-52-13 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_11-52-14 - Please update your Raspbian and other Software later.
+2020-03-26_11-52-14 - Checking your Raspberry Pi Hardwareversion...
+2020-03-26_11-52-14 - Your Raspberry is armv7l
+2020-03-26_11-52-14 - Installing NodeJS with recommended Options
+2020-03-26_11-52-14 - Installing latest NPM Release
+2020-03-26_11-52-14 - Installing homebridge via NPM
+2020-03-26_11-52-14 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-26_11-52-16 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-26_11-52-16 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-26_11-52-24 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_11-52-35 - Provided Path is valid...
+2020-03-26_11-52-35 - Copying your config.json to the correct path...
+2020-03-26_11-52-35 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_11-53-12 - Starting Homebridge Installation
+2020-03-26_11-53-12 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_11-53-12 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_11-53-12 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_11-53-13 - Please update your Raspbian and other Software later.
+2020-03-26_11-53-13 - Checking your Raspberry Pi Hardwareversion...
+2020-03-26_11-53-13 - Your Raspberry is armv7l
+2020-03-26_11-53-14 - Installing NodeJS with recommended Options
+2020-03-26_11-53-14 - Installing latest NPM Release
+2020-03-26_11-53-14 - Installing homebridge via NPM
+2020-03-26_11-53-14 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-26_11-53-16 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-26_11-53-16 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-26_11-53-17 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_11-53-27 - Provided Path is valid...
+2020-03-26_11-53-28 - Copying your config.json to the correct path...
+2020-03-26_11-53-28 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_11-54-07 - Starting Homebridge Installation
+2020-03-26_11-54-07 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_11-54-07 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_11-54-08 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_11-54-08 - Please update your Raspbian and other Software later.
+2020-03-26_11-54-09 - Checking your Raspberry Pi Hardwareversion...
+2020-03-26_11-54-09 - Your Raspberry is armv7l
+2020-03-26_11-54-09 - Installing NodeJS with recommended Options
+2020-03-26_11-54-09 - Installing latest NPM Release
+2020-03-26_11-54-09 - Installing homebridge via NPM
+2020-03-26_11-54-09 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-26_11-54-10 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-26_11-54-10 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-26_11-54-12 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_11-54-23 - Provided Path is valid...
+2020-03-26_11-54-23 - Copying your config.json to the correct path...
+2020-03-26_11-54-23 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_11-57-01 - Starting Homebridge Installation
+2020-03-26_11-57-01 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_11-57-01 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_11-57-01 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_11-57-03 - Please update your Raspbian and other Software later.
+2020-03-26_11-57-03 - Checking your Raspberry Pi Hardwareversion...
+2020-03-26_11-57-03 - Your Raspberry is armv7l
+2020-03-26_11-57-03 - Installing NodeJS with recommended Options
+2020-03-26_11-57-03 - Installing latest NPM Release
+2020-03-26_11-57-03 - Installing homebridge via NPM
+2020-03-26_11-57-03 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-26_11-57-04 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-26_11-57-04 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-26_11-57-05 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_11-57-18 - Provided Path is valid...
+2020-03-26_11-57-18 - Copying your config.json to the correct path...
+2020-03-26_11-57-19 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_13-17-24 - Starting Homebridge Installation
+2020-03-26_13-17-24 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_13-17-25 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_13-17-25 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_13-17-26 - Please update your Raspbian and other Software later.
+2020-03-26_13-17-26 - Checking your Raspberry Pi Hardwareversion...
+2020-03-26_13-17-26 - Your Raspberry is armv7l
+2020-03-26_13-17-26 - Installing NodeJS with recommended Options
+2020-03-26_13-17-26 - Installing latest NPM Release
+2020-03-26_13-17-26 - Installing homebridge via NPM
+2020-03-26_13-17-26 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-26_13-17-28 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-26_13-17-28 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-26_13-17-29 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_13-17-39 - Provided Path is valid...
+2020-03-26_13-17-40 - Copying your config.json to the correct path...
+2020-03-26_13-17-40 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_13-18-10 - Starting Homebridge Installation
+2020-03-26_13-18-11 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_13-18-11 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_13-18-11 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_13-18-13 - Please update your Raspbian and other Software later.
+2020-03-26_13-18-13 - Checking your Raspberry Pi Hardwareversion...
+2020-03-26_13-18-13 - Your Raspberry is armv7l
+2020-03-26_13-18-13 - Installing NodeJS with recommended Options
+2020-03-26_13-18-13 - Installing latest NPM Release
+2020-03-26_13-18-13 - Installing homebridge via NPM
+2020-03-26_13-18-13 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-26_13-18-14 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-26_13-18-14 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-26_13-18-15 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_13-18-30 - Provided Path is valid...
+2020-03-26_13-18-31 - Copying your config.json to the correct path...
+2020-03-26_13-18-31 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_13-19-09 - Starting Homebridge Installation
+2020-03-26_13-19-09 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-26_13-19-09 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-26_13-19-09 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-26_13-19-11 - Please update your Raspbian and other Software later.
+2020-03-26_13-19-11 - Checking your Raspberry Pi Hardwareversion...
+2020-03-26_13-19-11 - Your Raspberry is armv7l
+2020-03-26_13-19-11 - Installing NodeJS with recommended Options
+2020-03-26_13-19-12 - Installing latest NPM Release
+2020-03-26_13-19-12 - Installing homebridge via NPM
+2020-03-26_13-19-12 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-26_13-19-14 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-26_13-19-14 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-26_13-19-15 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_13-19-23 - Provided Path is valid...
+2020-03-26_13-19-23 - Copying your config.json to the correct path...
+2020-03-26_13-19-24 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_13-19-46 - Provided Path is valid...
+2020-03-26_13-19-46 - Copying your config.json to the correct path...
+2020-03-26_13-19-46 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_13-19-46 - Provided Path is valid...
+2020-03-26_13-19-46 - Copying your config.json to the correct path...
+2020-03-26_13-19-47 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-26_13-19-47 - Provided Path is valid...
+2020-03-26_13-19-47 - Copying your config.json to the correct path...
+2020-03-27_12-57-34 - Starting Homebridge Installation
+2020-03-27_12-57-34 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_12-57-34 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_12-57-34 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_12-57-36 - Please update your Raspbian and other Software later.
+2020-03-27_12-57-36 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_12-57-36 - Your Raspberry is armv7l
+2020-03-27_12-57-36 - Installing NodeJS with recommended Options
+2020-03-27_12-57-37 - Installing latest NPM Release
+2020-03-27_12-57-37 - Installing homebridge via NPM
+2020-03-27_12-57-37 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_12-57-37 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_12-57-38 - Something went wrong during the Homebridge Installation... Please check the Installation Log and/or restart the Installation
+2020-03-27_12-59-59 - Starting Homebridge Installation
+2020-03-27_12-59-59 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_12-59-59 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_12-59-59 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-00-01 - Please update your Raspbian and other Software later.
+2020-03-27_13-00-01 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-00-01 - Your Raspberry is armv7l
+2020-03-27_13-00-01 - Installing NodeJS with recommended Options
+2020-03-27_13-00-01 - Installing latest NPM Release
+2020-03-27_13-00-01 - Installing homebridge via NPM
+2020-03-27_13-00-01 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-00-06 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-00-06 - Something went wrong during the Homebridge Installation... Please check the Installation Log and/or restart the Installation
+2020-03-27_13-01-35 - Starting Homebridge Installation
+2020-03-27_13-01-36 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_13-01-36 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_13-01-36 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-01-36 - Please update your Raspbian and other Software later.
+2020-03-27_13-01-37 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-01-37 - Your Raspberry is armv7l
+2020-03-27_13-01-37 - Installing NodeJS with recommended Options
+2020-03-27_13-01-37 - Installing latest NPM Release
+2020-03-27_13-01-37 - Installing homebridge via NPM
+2020-03-27_13-01-37 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-01-38 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-01-38 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-27_13-01-44 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-02-16 - Provided Path is valid...
+2020-03-27_13-02-16 - Copying your config.json to the correct path...
+2020-03-27_13-02-16 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-04-56 - Starting Homebridge Installation
+2020-03-27_13-04-56 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_13-04-56 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_13-04-56 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-04-57 - Please update your Raspbian and other Software later.
+2020-03-27_13-04-57 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-04-57 - Your Raspberry is armv7l
+2020-03-27_13-04-59 - Installing NodeJS with recommended Options
+2020-03-27_13-04-59 - Installing latest NPM Release
+2020-03-27_13-04-59 - Installing homebridge via NPM
+2020-03-27_13-04-59 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-05-02 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-05-02 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-27_13-05-04 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-05-08 - Provided Path is valid...
+2020-03-27_13-05-08 - Copying your config.json to the correct path...
+2020-03-27_13-05-09 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-06-21 - Starting Homebridge Installation
+2020-03-27_13-06-21 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_13-06-21 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_13-06-21 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-06-22 - Please update your Raspbian and other Software later.
+2020-03-27_13-06-22 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-06-22 - Your Raspberry is armv7l
+2020-03-27_13-06-22 - Installing NodeJS with recommended Options
+2020-03-27_13-06-23 - Installing latest NPM Release
+2020-03-27_13-06-23 - Installing homebridge via NPM
+2020-03-27_13-06-23 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-06-24 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-06-24 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-27_13-06-25 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-06-26 - Provided Path is valid...
+2020-03-27_13-06-26 - Copying your config.json to the correct path...
+2020-03-27_13-06-26 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-09-54 - Starting Homebridge Installation
+2020-03-27_13-09-54 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_13-09-54 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_13-09-54 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-09-55 - Please update your Raspbian and other Software later.
+2020-03-27_13-09-55 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-09-55 - Your Raspberry is armv7l
+2020-03-27_13-09-55 - Installing NodeJS with recommended Options
+2020-03-27_13-09-55 - Installing latest NPM Release
+2020-03-27_13-09-55 - Installing homebridge via NPM
+2020-03-27_13-09-55 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-09-58 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-10-00 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-27_13-10-09 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-10-09 - Provided Path is valid...
+2020-03-27_13-10-10 - Copying your config.json to the correct path...
+2020-03-27_13-10-10 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
+2020-03-27_13-10-59 - Starting Homebridge Installation
+2020-03-27_13-10-59 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_13-10-59 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_13-10-59 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-11-00 - Please update your Raspbian and other Software later.
+2020-03-27_13-11-00 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-11-00 - Your Raspberry is armv7l
+2020-03-27_13-11-00 - Installing NodeJS with recommended Options
+2020-03-27_13-11-00 - Installing latest NPM Release
+2020-03-27_13-11-00 - Installing homebridge via NPM
+2020-03-27_13-11-01 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-11-01 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-11-02 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-27_13-11-03 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-11-19 - Provided Path is valid...
+2020-03-27_13-11-19 - Copying your config.json to the correct path...
+2020-03-27_13-11-19 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
+2020-03-27_13-17-27 - Starting Homebridge Installation
+2020-03-27_13-17-27 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_13-17-27 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_13-17-27 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-17-29 - Please update your Raspbian and other Software later.
+2020-03-27_13-17-29 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-17-29 - Your Raspberry is armv7l
+2020-03-27_13-17-29 - Installing NodeJS with recommended Options
+2020-03-27_13-17-29 - Installing latest NPM Release
+2020-03-27_13-17-29 - Installing homebridge via NPM
+2020-03-27_13-17-29 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-17-30 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-17-30 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-27_13-17-32 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-17-45 - Provided Path is valid...
+2020-03-27_13-17-45 - Copying your config.json to the correct path...
+2020-03-27_13-17-46 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
+2020-03-27_13-20-23 - Starting Homebridge Installation
+2020-03-27_13-20-23 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_13-20-23 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_13-20-24 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-20-25 - Please update your Raspbian and other Software later.
+2020-03-27_13-20-25 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-20-25 - Your Raspberry is armv7l
+2020-03-27_13-20-25 - Installing NodeJS with recommended Options
+2020-03-27_13-20-25 - Installing latest NPM Release
+2020-03-27_13-20-25 - Installing homebridge via NPM
+2020-03-27_13-20-25 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-20-26 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-20-26 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-27_13-20-28 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-20-40 - Provided Path is valid...
+2020-03-27_13-20-40 - Copying your config.json to the correct path...
+2020-03-27_13-20-40 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
+2020-03-27_13-21-30 - Starting Homebridge Installation
+2020-03-27_13-21-30 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_13-21-31 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_13-21-31 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-21-31 - Please update your Raspbian and other Software later.
+2020-03-27_13-21-32 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-21-32 - Your Raspberry is armv7l
+2020-03-27_13-21-32 - Installing NodeJS with recommended Options
+2020-03-27_13-21-32 - Installing latest NPM Release
+2020-03-27_13-21-32 - Installing homebridge via NPM
+2020-03-27_13-21-32 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-21-32 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-21-33 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-27_13-21-34 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-21-47 - Provided Path is valid...
+2020-03-27_13-21-47 - Copying your config.json to the correct path...
+2020-03-27_13-21-47 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
+2020-03-27_13-28-35 - Starting Homebridge Installation
+2020-03-27_13-28-35 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_13-28-35 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_13-28-35 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-28-36 - Please update your Raspbian and other Software later.
+2020-03-27_13-28-36 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-28-36 - Your Raspberry is armv7l
+2020-03-27_13-28-36 - Installing NodeJS with recommended Options
+2020-03-27_13-28-37 - Installing latest NPM Release
+2020-03-27_13-28-37 - Installing homebridge via NPM
+2020-03-27_13-28-37 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-28-37 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-28-38 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-27_13-28-39 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-28-52 - Provided Path is valid...
+2020-03-27_13-28-53 - Copying your config.json to the correct path...
+2020-03-27_13-28-53 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
+2020-03-27_13-30-24 - Starting Homebridge Installation
+2020-03-27_13-30-25 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_13-30-25 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_13-30-25 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-30-26 - Please update your Raspbian and other Software later.
+2020-03-27_13-30-26 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-30-26 - Your Raspberry is armv7l
+2020-03-27_13-30-26 - Installing NodeJS with recommended Options
+2020-03-27_13-30-26 - Installing latest NPM Release
+2020-03-27_13-30-26 - Installing homebridge via NPM
+2020-03-27_13-30-26 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-30-27 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-30-33 - Starting Homebridge Installation
+2020-03-27_13-30-33 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_13-30-33 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_13-30-33 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-30-34 - Please update your Raspbian and other Software later.
+2020-03-27_13-30-34 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-30-34 - Your Raspberry is armv7l
+2020-03-27_13-30-35 - Installing NodeJS with recommended Options
+2020-03-27_13-30-35 - Installing latest NPM Release
+2020-03-27_13-30-35 - Installing homebridge via NPM
+2020-03-27_13-30-35 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-30-37 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-31-30 - Starting Homebridge Installation
+2020-03-27_13-31-30 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_13-31-30 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_13-31-30 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-31-31 - Please update your Raspbian and other Software later.
+2020-03-27_13-31-31 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-31-31 - Your Raspberry is armv7l
+2020-03-27_13-31-31 - Installing NodeJS with recommended Options
+2020-03-27_13-31-31 - Installing latest NPM Release
+2020-03-27_13-31-31 - Installing homebridge via NPM
+2020-03-27_13-31-32 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-31-32 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-31-33 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-27_13-31-34 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-31-44 - Provided Path is valid...
+2020-03-27_13-31-44 - Copying your config.json to the correct path...
+2020-03-27_13-31-45 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
+2020-03-27_13-44-34 - Starting Homebridge Installation
+2020-03-27_13-44-34 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_13-44-34 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_13-44-34 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-44-36 - Please update your Raspbian and other Software later.
+2020-03-27_13-44-36 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-44-36 - Your Raspberry is armv7l
+2020-03-27_13-44-36 - Installing NodeJS with recommended Options
+2020-03-27_13-44-36 - Installing latest NPM Release
+2020-03-27_13-44-36 - Installing homebridge via NPM
+2020-03-27_13-44-36 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-44-38 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-44-38 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-27_13-44-39 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-44-50 - Provided Path is valid...
+2020-03-27_13-44-50 - Copying your config.json to the correct path...
+2020-03-27_13-44-50 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
+2020-03-27_13-45-33 - Starting Homebridge Installation
+2020-03-27_13-45-33 - Find the Installationlog at /home/pi/Documents/Git/HomebridgeInstallScript/files/log/install.log
+2020-03-27_13-45-33 - This Installationscript is not for Raspberry Pi 1 and Zero. 
+ If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: 
+ https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian
+2020-03-27_13-45-33 - Do you want to install Systemupdates first? It is recommended. (Y/N)
+2020-03-27_13-45-35 - Please update your Raspbian and other Software later.
+2020-03-27_13-45-35 - Checking your Raspberry Pi Hardwareversion...
+2020-03-27_13-45-35 - Your Raspberry is armv7l
+2020-03-27_13-45-35 - Installing NodeJS with recommended Options
+2020-03-27_13-45-35 - Installing latest NPM Release
+2020-03-27_13-45-35 - Installing homebridge via NPM
+2020-03-27_13-45-35 - Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)
+2020-03-27_13-45-36 - You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor
+2020-03-27_13-45-36 - Config.json found in /var/lib/homebridge. Do you want to use this Out of the Box Config File? (Y/N)
+2020-03-27_13-45-37 - Please provide the full path to the Config.json File you want to use for your Homebridge Installation...
+ Format: /<path to your Config>/config.json
+2020-03-27_13-45-48 - Provided Path is valid...
+2020-03-27_13-45-48 - Copying your config.json to the correct path...
+2020-03-27_13-45-49 - Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)
