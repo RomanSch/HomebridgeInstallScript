@@ -83,10 +83,10 @@ fi
 if [ "$updSystem" == "y" -o "$updSystem" == "Y" ]
 then
 	log "Start Systemupdate"
-	#sudo apt-get update -y
-	#sudo apt-get dist-upgrade -y
-	#sudo apt-get check
-	#sudo apt-get clean
+	sudo apt-get update -y
+	sudo apt-get dist-upgrade -y
+	sudo apt-get check
+	sudo apt-get clean
 else
 	log "Please update your Raspbian and other Software later."
 fi
@@ -100,20 +100,20 @@ log "Your Raspberry is $architecture"
 ##### NodeJS Installation
 
 log "Installing NodeJS with recommended Options" "info"
-#curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
-#sudo apt-get install -y nodejs gcc g++ make python
+curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
+sudo apt-get install -y nodejs gcc g++ make python
 
 
 ##### NPM Installation
 log "Installing latest NPM Release"
-#sudo npm install -g npm
+sudo npm install -g npm
 
 ##### Homebridge Installation
 log "Installing homebridge via NPM"
-#sudo npm install -g --unsafe-perm homebridge homebridge-config-ui-x
+sudo npm install -g --unsafe-perm homebridge homebridge-config-ui-x
 
 ##### JQ Json Viewing in Bash Installation
-#sudo apt-get install -y jq 
+sudo apt-get install -y jq 
 
 #### Setting up a Service for starting Homebridge after Reboot or Boot
 if [ "$setupHomebridgeService" == "Y" -o "$setupHomebridgeService" == "y" ]
@@ -220,8 +220,8 @@ if [ "$rebootNow" == "y" -o "$rebootNow" == "Y" ]
 then
 	log "Homebridge will start after the reboot independent. If not type \"sudo systemctl start homebridge\" or use your Shortcut on your Desktop."
 	log "Your Raspberry will reboot in a few seconds"
-	#sleep 30 
-	#sudo reboot
+	sleep 30 
+	sudo reboot
 else 
 	log "Please restart your Raspberry later" 
 	log "Your Homebridge Installation was successful"
