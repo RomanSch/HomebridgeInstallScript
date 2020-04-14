@@ -49,12 +49,37 @@ fi
 ######### Installationroutine ########     
 ######################################
 
-##### Updating Homebridge Software
 log "Starting Homebridge Installation"
 log "Find the Installationlog at $logPath"
 log "This Installationscript is not for Raspberry Pi 1 and Zero. \n If you are using a Raspberry Pi 1 or Zero please refer to the official Readme you can find here: \n https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-Raspbian"
-log "Do you want to install Systemupdates first? It is recommended. (Y/N)"
-read updSystem
+
+##### Using default values?
+log "Do you want to use default values for the Installation? (Y/N)"
+read useDefaultValues
+if [ "$useDefaultValues" == "Y" -o "$useDefaultValues" == "y" ]
+then
+	$updSystem = "Y"
+	$setupHomebridgeService = "Y"
+	$useOOTBConfig = "Y"
+	$installPlugins = "N"
+	$enableVncServer = "Y"
+	$rebootNow = "Y"
+else
+	log "Do you want to install Systemupdates? It is recommended. (Y/N)"
+	read updSystem
+	log "Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)"
+	read setupHomebridgeService
+	log "Do you want to use the Out of the Box Config File? (Y/N)"
+	read useOOTBConfig
+	log "Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)"
+	read installPlugins
+	log "Enable VNC Server to remote connect to Raspberry Desktop? (Y/N)"
+	read enableVncServer
+	log "Restart Raspberry after the Installation? (Y/N)" 
+	read rebootNow
+fi
+
+##### Updating Homebridge Software
 if [ "$updSystem" == "y" -o "$updSystem" == "Y" ]
 then
 	log "Start Systemupdate"
@@ -91,8 +116,6 @@ log "Installing homebridge via NPM"
 #sudo apt-get install -y jq 
 
 #### Setting up a Service for starting Homebridge after Reboot or Boot
-log "Do you want to setup a service to start Homebridge automatically after Reboot or Boot? (Y/N)"
-read setupHomebridgeService
 if [ "$setupHomebridgeService" == "Y" -o "$setupHomebridgeService" == "y" ]
 then
 	log "Setting up Homebridge Service..."
@@ -103,9 +126,7 @@ fi
 ##### Config.json Handling
 log "You have to do the plugin configuration on your own. For more Infos refer to the Plugindistributor"
 if [ -r $pathToConfig/config.json ]
-then
-	log "Config.json found in $pathToConfig. Do you want to use this Out of the Box Config File? (Y/N)"
-	read useOOTBConfig
+then	
 	if [ "$useOOTBConfig" == "N" -o "$useOOTBConfig" == "n" ]
 	then
 		validPath=false
@@ -134,8 +155,6 @@ else
 fi
 
 ##### Plugin Installations
-log "Install Plugins? If you don't know what plugins have a look at https://www.npmjs.com and search for homebridge (Y/N)"
-read installPlugins
 if [ "$installPlugins" == "Y" -o "$installPlugins" == "y" ]
 	then 
 		until [ "$morePlugins" == "N" -o "$morePlugins" == "n" ]
@@ -177,37 +196,7 @@ if [ "$installPlugins" == "Y" -o "$installPlugins" == "y" ]
 		log "Continue installation without plugins"
 fi
 
-##### Systemd Service Configuration	
-#log "Do you want to configure the automatic Service to start Homebridge on every Boot? (Y/N)"
-#read installService
-#if [ "$installService" == "y" -o "$installService" == "Y" ]
-#then 
-#	log "Copying Service Files to Filesystem" 
-#	sudo cp $baseDir/files/homebridge /etc/default/homebridge
-#	sudo cp $baseDir/files/homebridge.service /etc/systemd/system/homebridge.service
-#	log "Service files copied to filesystem" 
-#	log "Create Service User homebridge" 
-#	sudo useradd -M --system --group sudo homebridge
-#	log "Service User Homebridge created" 
-#	log "Modify Sudoers.d for user homebridge" 
-#	sudo cp $baseDir/files/011_homebridge_nopasswd /etc/sudoers.d/011_homebridge_nopasswd
-#	log "Sudoers.d modified" 
-#	log "Enable systemd Service" 
-#	sudo systemctl daemon-reload
-#	sudo systemctl enable homebridge
-#	log "Systemd Service enabled" 
-#	log "Copying Start Stop Skripts to Desktop" 
-#	sudo cp $baseDir/files/HomebridgeRestart $homeDir/Desktop/HomebridgeRestart
-#	sudo cp $baseDir/files/HomebridgeStart $homeDir/Desktop/HomebridgeStart
-#	sudo cp $baseDir/files/HomebridgeStop $homeDir/Desktop/HomebridgeStop
-#	sudo cp $baseDir/files/Journal $homeDir/Desktop/HomebridgeLog
-#else
-#	log "No Service configuration selected"
-#fi
-
 ##### VNC Server Configuration
-log "Enable VNC Server to remote connect to Raspberry Desktop? (Y/N)"
-read enableVncServer
 if [ "$enableVncServer" == "y" -o "$enableVncServer" == "Y" ]
 then
 	if  sudo systemctl status vncserver-x11-serviced.service | grep -q inactive ;
@@ -222,13 +211,11 @@ else
 fi
 
 ##### Cleanup of old stuff
-#log "Cleanup of old unused stuff..."
-#sudo dpkg -P `dpkg -l | grep "^rc" | awk -F" " '{ print $2 }'`
-#sudo apt-get autoremove -y
+log "Cleanup of old unused stuff..."
+sudo dpkg -P `dpkg -l | grep "^rc" | awk -F" " '{ print $2 }'`
+sudo apt-get autoremove -y
 
 ##### Reboot
-log "Restart Raspberry now? (Y/N)" 
-read rebootNow
 if [ "$rebootNow" == "y" -o "$rebootNow" == "Y" ]
 then
 	log "Homebridge will start after the reboot independent. If not type \"sudo systemctl start homebridge\" or use your Shortcut on your Desktop."
@@ -240,20 +227,4 @@ else
 	log "Your Homebridge Installation was successful"
 	log "You can configure your Homebridge in the Webclient available here: http://<IP or Name of your Raspberry>:8581" 	
 fi
-
-##### Start Service
-#log "Please don't forget to edit your config.json at /var/homebridge"
-#log "Do you want to start the Service now? Don't forget to edit your config.json at /var/homebridge (Y/N)" 
-#read startServiceNow
-#if [ "$startServiceNow" == "y" -o "$startServiceNow" == "Y" ]
-#then
-#	log "Starting Homebridge Service now" 
-#	log "Starting Homebridge Journal" 
-#	lxterminal --geometry=150x50 -e sudo journalctl -f -u homebridge		
-#	log "Starting Homebridge Service" 
-#	sudo systemctl start homebridge
-#	log "Homebridge Service started"
-#else 
-#	log "Servicestart not triggered"
-#fi
 read -p "Press any key to exit the setup" exit
