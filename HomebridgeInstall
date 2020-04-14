@@ -83,10 +83,10 @@ fi
 if [ "$updSystem" == "y" -o "$updSystem" == "Y" ]
 then
 	log "Start Systemupdate"
-	sudo apt-get update -y
-	sudo apt-get dist-upgrade -y
-	sudo apt-get check
-	sudo apt-get clean
+	#sudo apt-get update -y
+	#sudo apt-get dist-upgrade -y
+	#sudo apt-get check
+	#sudo apt-get clean
 else
 	log "Please update your Raspbian and other Software later."
 fi
@@ -212,7 +212,7 @@ fi
 
 ##### Cleanup of old stuff
 log "Cleanup of old unused stuff..."
-sudo dpkg -P `dpkg -l | grep "^rc" | awk -F" " '{ print $2 }'`
+#sudo dpkg -P `dpkg -l | grep "^rc" | awk -F" " '{ print $2 }'`
 sudo apt-get autoremove -y
 
 ##### Reboot
@@ -220,8 +220,8 @@ if [ "$rebootNow" == "y" -o "$rebootNow" == "Y" ]
 then
 	log "Homebridge will start after the reboot independent. If not type \"sudo systemctl start homebridge\" or use your Shortcut on your Desktop."
 	log "Your Raspberry will reboot in a few seconds"
-	sleep 30 
-	sudo reboot
+	#sleep 30 
+	#sudo reboot
 else 
 	log "Please restart your Raspberry later" 
 	log "Your Homebridge Installation was successful"
