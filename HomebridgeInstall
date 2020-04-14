@@ -58,12 +58,12 @@ log "Do you want to use default values for the Installation? (Y/N)"
 read useDefaultValues
 if [ "$useDefaultValues" == "Y" -o "$useDefaultValues" == "y" ]
 then
-	updSystem = "Y"
-	setupHomebridgeService = "Y"
-	useOOTBConfig = "Y"
-	installPlugins = "N"
-	enableVncServer = "Y"
-	rebootNow = "Y"
+	updSystem="Y"
+	setupHomebridgeService="Y"
+	useOOTBConfig="Y"
+	installPlugins="N"
+	enableVncServer="Y"
+	rebootNow="Y"
 else
 	log "Do you want to install Systemupdates? It is recommended. (Y/N)"
 	read updSystem
